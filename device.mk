@@ -39,6 +39,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.svn=52
 
+# Enforce privapp-permissions whitelist
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.control_privapp_permissions=log
+
 PRODUCT_PACKAGES += \
     messaging
 
@@ -60,7 +64,9 @@ PRODUCT_SHIPPING_API_LEVEL := 26
 
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+        $(LOCAL_PATH)/overlay \
+        $(LOCAL_PATH)/overlay-xdroid
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.hardware.rc:recovery/root/init.recovery.$(PRODUCT_HARDWARE).rc \
