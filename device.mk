@@ -39,10 +39,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.svn=52
 
-# Enforce privapp-permissions whitelist
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=log
-
 PRODUCT_PACKAGES += \
     messaging
 
@@ -795,6 +791,10 @@ PRODUCT_COPY_FILES += \
 # Now Playing
 PRODUCT_PACKAGES += \
     NowPlayingOverlay
+
+# Active Edge
+PRODUCT_PACKAGES += \
+    ElmyraService
 
 # Shims
 PRODUCT_PACKAGES += \
